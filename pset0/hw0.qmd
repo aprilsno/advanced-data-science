@@ -1,0 +1,46 @@
+---
+title: "Homework 0"
+author: "Sara O'Brien"
+date: August 30, 2023
+class: BST260
+format: html
+editor: visual
+---
+
+### Part 1 
+
+Solutions of $f(x) = ax^2 + bx + c = 0$ for $a=1, b=3, c=2$.
+
+```{r, echo=FALSE}
+ 
+# Define a, b, c
+a <- 1
+b <- 3
+c <- 2
+  
+# Solve for and print the solutions of the quadratic equation
+discriminant <- b^2 - 4*a*c
+  
+if (discriminant > 0) {
+  x1 <- (-b - sqrt(discriminant))/(2*a)
+  x2 <- (-b + sqrt(discriminant))/(2*a)
+  print(paste("x = ", x1, ",", x2))
+  } else if (discriminant == 0) {
+    x <- (-b / (2*a))
+    print(paste("x =", x))
+    } else {
+      print("No real solutions.")
+      }
+
+```
+
+### Part 2
+
+Graph of $f(x)$ versus $x$ for $x \in (-5,5)$ confirming the solutions derived in Part 1.
+
+```{r, echo=FALSE}
+x <- seq(-5,5,length=300)
+plot(x, a*x^2 + b*x + c, type = "l", ylab = "f(x)")
+abline(h = 0, lty = 2, col = "red")
+```
+
